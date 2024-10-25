@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3 uid="uid://b27rds3m1pmsu"]
+
+[ext_resource type="Texture2D" uid="uid://08m1xrlyr0r7" path="res://icon.svg" id="1_theuu"]
+
+[node name="MyLevel" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(108.422, 625)
+scale = Vector2(1.71216, 0.393066)
+texture = ExtResource("1_theuu")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(323, 514)
+scale = Vector2(1.71216, 0.393066)
+texture = ExtResource("1_theuu")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(323, 514)
+scale = Vector2(1.71216, 0.393066)
+texture = ExtResource("1_theuu")
+
+[node name="Sprite2D8" type="Sprite2D" parent="."]
+position = Vector2(983.211, 515)
+scale = Vector2(2.63733, 0.393066)
+texture = ExtResource("1_theuu")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(185, 569)
+scale = Vector2(0.492188, 0.484375)
+texture = ExtResource("1_theuu")
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+position = Vector2(513, 514)
+scale = Vector2(0.492188, 0.484375)
+texture = ExtResource("1_theuu")
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+position = Vector2(630, 515)
+scale = Vector2(0.492188, 0.484375)
+texture = ExtResource("1_theuu")
+
+[node name="Sprite2D7" type="Sprite2D" parent="."]
+position = Vector2(742, 515)
+scale = Vector2(0.492188, 0.484375)
+texture = ExtResource("1_theuu")
