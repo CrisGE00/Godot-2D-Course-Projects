@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=3 uid="uid://1qubtqyfvejf"]
+
+[ext_resource type="Texture2D" uid="uid://dbnbbjbcpd0cl" path="res://purple.png" id="1_6eiga"]
+[ext_resource type="Script" path="res://level_1.gd" id="1_ei663"]
+[ext_resource type="PackedScene" uid="uid://2mexlxonqj0" path="res://player.tscn" id="2_toxf0"]
+[ext_resource type="PackedScene" uid="uid://w4m1omh3kaqf" path="res://maze.tscn" id="4_l2ly2"]
+
+[node name="Level1" type="Node2D"]
+script = ExtResource("1_ei663")
+
+[node name="Graphics" type="CanvasLayer" parent="."]
+layer = -10
+
+[node name="Background" type="TextureRect" parent="Graphics"]
+z_index = -100
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_6eiga")
+stretch_mode = 1
+
+[node name="LevelData" type="Node" parent="."]
+
+[node name="Maze" parent="LevelData" instance=ExtResource("4_l2ly2")]
+z_index = -50
+position = Vector2(208, 134)
+
+[node name="StartLabel" type="Label" parent="LevelData"]
+z_index = -25
+offset_left = 5.0
+offset_top = 51.0
+offset_right = 244.0
+offset_bottom = 161.0
+theme_override_font_sizes/font_size = 80
+text = "Start"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="EndLabel" type="Label" parent="LevelData"]
+z_index = -25
+offset_left = 34.0
+offset_top = -358.0
+offset_right = 273.0
+offset_bottom = -248.0
+theme_override_font_sizes/font_size = 80
+text = "End"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Tutorial" type="Label" parent="LevelData"]
+z_index = -25
+offset_left = -138.0
+offset_top = -85.0
+offset_right = 113.0
+offset_bottom = 27.0
+text = "- Move with WASD or arrow keys
+- Try not to exit the maze
+
+Good Luck!"
+
+[node name="player" parent="." instance=ExtResource("2_toxf0")]
+position = Vector2(123, 108)
+
+[connection signal="body_exited" from="LevelData/Maze" to="." method="_on_maze_body_exited"]
