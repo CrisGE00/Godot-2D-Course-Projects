@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=3 uid="uid://cs4wuelneqal0"]
+
+[ext_resource type="Script" path="res://scripts/start_menu.gd" id="1_2cbkg"]
+[ext_resource type="PackedScene" uid="uid://bmu2yhtibexk8" path="res://scenes/bg.tscn" id="1_177fa"]
+[ext_resource type="FontFile" uid="uid://bs7pa5l74cos6" path="res://assets/fonts/Kenney Pixel Square.ttf" id="2_knsjk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8il7l"]
+font = ExtResource("2_knsjk")
+font_size = 31
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[node name="StartMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2cbkg")
+
+[node name="BG" parent="." instance=ExtResource("1_177fa")]
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -112.0
+offset_top = 45.0
+offset_right = 112.0
+offset_bottom = 89.0
+grow_horizontal = 2
+text = "MARTIAN MIKE"
+label_settings = SubResource("LabelSettings_8il7l")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -28.0
+offset_top = 127.0
+offset_right = 28.0
+offset_bottom = 158.0
+grow_horizontal = 2
+text = "START"
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -23.0
+offset_top = 178.0
+offset_right = 24.0
+offset_bottom = 209.0
+grow_horizontal = 2
+text = "QUIT"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
